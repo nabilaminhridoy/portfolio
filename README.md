@@ -9,8 +9,7 @@ Modern, scalable, and user-focused web applications built with modern technologi
 <p>
   <a href="https://nabilaminhridoy.vercel.app">
     <img src="https://img.shields.io/badge/Live%20Portfolio-030f2b?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio">
-  </a>
-  <a href="https://github.com/nabilaminhridoy/portfolio">
+  </a><a href="https://github.com/nabilaminhridoy/portfolio">
     <img src="https://img.shields.io/badge/Source%20Code-030f2b?style=for-the-badge&logo=github&logoColor=white" alt="Source Code">
   </a>
 </p>
