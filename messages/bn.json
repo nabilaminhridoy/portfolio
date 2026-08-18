@@ -1,0 +1,160 @@
+{
+  "Meta": {
+    "siteName": "নাবিল আমিন হৃদয়",
+    "title": "নাবিল আমিন হৃদয় — ফুল স্ট্যাক ডেভেলপার",
+    "description": "নাবিল আমিন হৃদয়ের প্রিমিয়াম পোর্টফোলিও — একজন ফুল স্ট্যাক ডেভেলপার যিনি Next.js, React, Node.js এবং আধুনিক ওয়েব প্রযুক্তিতে দক্ষ।",
+    "keywords": "নাবিল আমিন হৃদয়, ফুল স্ট্যাক ডেভেলপার, Next.js, React, Node.js, TypeScript, পোর্টফোলিও"
+  },
+  "Nav": {
+    "home": "হোম",
+    "about": "পরিচিতি",
+    "skills": "দক্ষতা",
+    "projects": "প্রজেক্ট",
+    "services": "সেবা",
+    "experience": "অভিজ্ঞতা",
+    "education": "শিক্ষা",
+    "testimonials": "মতামত",
+    "contact": "যোগাযোগ",
+    "resume": "রিজিউম",
+    "certifications": "সার্টিফিকেশন",
+    "dashboard": "ড্যাশবোর্ড",
+    "adminLogin": "অ্যাডমিন লগইন"
+  },
+  "Hero": {
+    "greeting": "হ্যালো, আমি",
+    "name": "নাবিল আমিন হৃদয়",
+    "role": "ফুল স্ট্যাক ডেভেলপার",
+    "tagline": "কোডে নিখুঁত ও ডিজাইনে সচেতন মানসিকতা দিয়ে প্রিমিয়াম, আধুনিক ও দ্রুতগামী ওয়েব অভিজ্ঞতা তৈরি করি।",
+    "viewProjects": "প্রজেক্ট দেখুন",
+    "downloadResume": "রিজিউম ডাউনলোড",
+    "available": "ফ্রিল্যান্সের জন্য উপলব্ধ",
+    "scrollDown": "স্ক্রল করে দেখুন"
+  },
+  "About": {
+    "title": "আমার সম্পর্কে",
+    "subtitle": "আমার সাথে পরিচিত হোন",
+    "highlights": "হাইলাইটস",
+    "yearsExperience": "বছরের অভিজ্ঞতা",
+    "projectsCompleted": "সম্পন্ন প্রজেক্ট",
+    "happyClients": "সন্তুষ্ট ক্লায়েন্ট",
+    "technologies": "প্রযুক্তি"
+  },
+  "Skills": {
+    "title": "দক্ষতা ও প্রযুক্তি",
+    "subtitle": "যেসব নিয়ে কাজ করি",
+    "levelLabel": "দক্ষতা স্তর"
+  },
+  "Projects": {
+    "title": "নির্বাচিত প্রজেক্ট",
+    "subtitle": "নির্বাচিত কাজ",
+    "viewAll": "সকল প্রজেক্ট দেখুন",
+    "liveDemo": "লাইভ ডেমো",
+    "sourceCode": "সোর্স কোড",
+    "viewProject": "প্রজেক্ট দেখুন",
+    "noProjects": "এখনো কোনো প্রজেক্ট নেই"
+  },
+  "Services": {
+    "title": "সেবাসমূহ",
+    "subtitle": "আমি যা প্রদান করি",
+    "features": "অন্তর্ভুক্ত"
+  },
+  "Experience": {
+    "title": "অভিজ্ঞতা",
+    "subtitle": "আমার পেশাদার যাত্রা",
+    "present": "বর্তমান",
+    "noExperience": "এখনো কোনো অভিজ্ঞতা নেই"
+  },
+  "Education": {
+    "title": "শিক্ষা",
+    "subtitle": "আমার একাডেমিক পটভূমি",
+    "present": "বর্তমান",
+    "noEducation": "এখনো কোনো শিক্ষা নেই"
+  },
+  "Certifications": {
+    "title": "সার্টিফিকেশন",
+    "subtitle": "পেশাদার সনদ",
+    "issued": "প্রদানকৃত",
+    "expires": "মেয়াদ শেষ",
+    "noExpiry": "মেয়াদহীন",
+    "verify": "যাচাই করুন",
+    "viewCredential": "সনদ দেখুন",
+    "featured": "নির্বাচিত",
+    "skills": "দক্ষতা"
+  },
+  "Testimonials": {
+    "title": "মতামত",
+    "subtitle": "ক্লায়েন্টরা যা বলেন",
+    "noTestimonials": "এখনো কোনো মতামত নেই"
+  },
+  "Contact": {
+    "title": "যোগাযোগ করুন",
+    "subtitle": "একসাথে কিছু তৈরি করি",
+    "name": "আপনার নাম",
+    "email": "আপনার ইমেইল",
+    "subject": "বিষয়",
+    "message": "আপনার বার্তা",
+    "send": "বার্তা পাঠান",
+    "sending": "পাঠানো হচ্ছে...",
+    "success": "বার্তা পাঠানো হয়েছে! শীঘ্রই আমি উত্তর দেব।",
+    "error": "কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।",
+    "infoTitle": "যোগাযোগের তথ্য",
+    "followMe": "আমাকে ফলো করুন"
+  },
+  "Footer": {
+    "rights": "© {year} নাবিল আমিন হৃদয়। সর্বস্বত্ব সংরক্ষিত।",
+    "builtWith": "Next.js, TypeScript ও Tailwind CSS দিয়ে নির্মিত",
+    "quickLinks": "দ্রুত লিংক",
+    "connect": "সংযুক্ত হন"
+  },
+  "ProjectsPage": {
+    "title": "প্রজেক্ট",
+    "subtitle": "আমার সকল কাজ",
+    "filterAll": "সকল",
+    "filterByTech": "প্রযুক্তি দিয়ে ফিল্টার",
+    "noResults": "আপনার ফিল্টারের সাথে কোনো প্রজেক্ট মেলে না।",
+    "noProjects": "এখনো কোনো প্রজেক্ট নেই",
+    "noProjectsDescription": "প্রকাশিত হলে নতুন প্রজেক্ট এখানে দেখা যাবে।"
+  },
+  "ProjectDetail": {
+    "liveDemo": "লাইভ ডেমো",
+    "sourceCode": "সোর্স কোড",
+    "technologies": "প্রযুক্তি",
+    "description": "বিবরণ",
+    "relatedProjects": "সম্পর্কিত প্রজেক্ট",
+    "backToProjects": "প্রজেক্টে ফিরে যান",
+    "notFound": "প্রজেক্ট পাওয়া যায়নি",
+    "notFoundDescription": "আপনি খুঁজছেন এমন প্রজেক্টটি বিদ্যমান নেই বা সরানো হয়েছে।",
+    "viewProject": "প্রজেক্ট দেখুন"
+  },
+  "ResumePage": {
+    "title": "রিজিউম",
+    "subtitle": "আমার রিজিউম ডাউনলোড করুন",
+    "download": "রিজিউম ডাউনলোড",
+    "noResume": "কোনো রিজিউম উপলব্ধ নেই",
+    "noResumeDescription": "আপলোড করা হলে রিজিউম ডাউনলোডের জন্য উপলব্ধ হবে।",
+    "version": "সংস্করণ",
+    "summary": "সারাংশ",
+    "backToHome": "হোমে ফিরে যান"
+  },
+  "NotFound": {
+    "title": "পেজটি পাওয়া যায়নি",
+    "description": "আপনি যে পেজটি খুঁজছেন সেটি পাওয়া যাচ্ছে না অথবা সরিয়ে নেওয়া হয়েছে।",
+    "backHome": "হোমে ফিরে যান",
+    "viewProjects": "প্রজেক্ট দেখুন"
+  },
+  "Error": {
+    "title": "কিছু সমস্যা হয়েছে",
+    "description": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। আবার চেষ্টা করুন।",
+    "tryAgain": "আবার চেষ্টা করুন"
+  },
+  "Common": {
+    "loading": "লোড হচ্ছে...",
+    "languageSwitch": "English",
+    "theme": {
+      "light": "লাইট",
+      "dark": "ডার্ক",
+      "system": "সিস্টেম"
+    },
+    "download": "ডাউনলোড"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "Meta": {
+    "siteName": "Nabil Amin Hridoy",
+    "title": "Nabil Amin Hridoy — Full Stack Developer",
+    "description": "Premium portfolio of Nabil Amin Hridoy, a Full Stack Developer specializing in Next.js, React, Node.js and modern web technologies.",
+    "keywords": "Nabil Amin Hridoy, Full Stack Developer, Next.js, React, Node.js, TypeScript, Portfolio"
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "experience": "Experience",
+    "education": "Education",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "resume": "Resume",
+    "certifications": "Certifications",
+    "dashboard": "Dashboard",
+    "adminLogin": "Admin Login"
+  },
+  "Hero": {
+    "greeting": "Hello, I'm",
+    "name": "Nabil Amin Hridoy",
+    "role": "Full Stack Developer",
+    "tagline": "Crafting premium, modern, and performant web experiences with code precision and design intent.",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume",
+    "available": "Available for freelance",
+    "scrollDown": "Scroll to explore"
+  },
+  "About": {
+    "title": "About Me",
+    "subtitle": "Get to know me",
+    "highlights": "Highlights",
+    "yearsExperience": "Years of Experience",
+    "projectsCompleted": "Projects Completed",
+    "happyClients": "Happy Clients",
+    "technologies": "Technologies"
+  },
+  "Skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "What I work with",
+    "levelLabel": "Proficiency"
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "subtitle": "Selected work",
+    "viewAll": "View All Projects",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "viewProject": "View Project",
+    "noProjects": "No projects yet"
+  },
+  "Services": {
+    "title": "Services",
+    "subtitle": "What I offer",
+    "features": "Includes"
+  },
+  "Experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey",
+    "present": "Present",
+    "noExperience": "No experience entries yet"
+  },
+  "Education": {
+    "title": "Education",
+    "subtitle": "My academic background",
+    "present": "Present",
+    "noEducation": "No education entries yet"
+  },
+  "Certifications": {
+    "title": "Certifications",
+    "subtitle": "Professional credentials",
+    "issued": "Issued",
+    "expires": "Expires",
+    "noExpiry": "Does not expire",
+    "verify": "Verify",
+    "viewCredential": "View Credential",
+    "featured": "Featured",
+    "skills": "Skills"
+  },
+  "Testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What clients say",
+    "noTestimonials": "No testimonials yet"
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's build something together",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "infoTitle": "Contact Information",
+    "followMe": "Follow Me"
+  },
+  "Footer": {
+    "rights": "© {year} Nabil Amin Hridoy. All rights reserved.",
+    "builtWith": "Built with Next.js, TypeScript and Tailwind CSS",
+    "quickLinks": "Quick Links",
+    "connect": "Connect"
+  },
+  "ProjectsPage": {
+    "title": "Projects",
+    "subtitle": "All my work",
+    "filterAll": "All",
+    "filterByTech": "Filter by Technology",
+    "noResults": "No projects match your filter.",
+    "noProjects": "No projects yet",
+    "noProjectsDescription": "New projects will appear here once published."
+  },
+  "ProjectDetail": {
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "technologies": "Technologies",
+    "description": "Description",
+    "relatedProjects": "Related Projects",
+    "backToProjects": "Back to Projects",
+    "notFound": "Project not found",
+    "notFoundDescription": "The project you're looking for doesn't exist or has been removed.",
+    "viewProject": "View Project"
+  },
+  "ResumePage": {
+    "title": "Resume",
+    "subtitle": "Download my resume",
+    "download": "Download Resume",
+    "noResume": "No resume available",
+    "noResumeDescription": "A resume will be available for download once uploaded.",
+    "version": "Version",
+    "summary": "Summary",
+    "backToHome": "Back to Home"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or may have been moved.",
+    "backHome": "Back to Home",
+    "viewProjects": "View Projects"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "tryAgain": "Try Again"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "languageSwitch": "বাংলা",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "download": "Download"
+  }
+}

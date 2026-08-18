@@ -1,0 +1,500 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// AUTH
+// ============================================================
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  password     String
+  role         String    @default("ADMIN")
+  avatarUrl    String?
+  isActive     Boolean    @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  passwordResets PasswordResetToken[]
+  activities     ActivityLog[]
+
+  @@index([email])
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  email     String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([email])
+}
+
+// ============================================================
+// CONTENT — About
+// ============================================================
+
+model About {
+  id             String   @id @default(cuid())
+  nameEn         String
+  nameBn         String
+  roleEn         String
+  roleBn         String
+  bioEn          String   @default("")
+  bioBn          String   @default("")
+  profileImageId String?
+  profileImageUrl String?
+  locationEn     String?
+  locationBn     String?
+  email          String?
+  phone          String?
+  available      Boolean  @default(true)
+
+  // CMS-controlled statistics (null = hidden on public site)
+  yearsExperience    Int?
+  projectsCompleted  Int?
+  happyClients       Int?
+  technologiesCount  Int?
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// ============================================================
+// CONTENT — Skills (with official tech logos)
+// ============================================================
+
+model Skill {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  logoUrl       String?
+  category      String   // Frontend | Backend | Database | DevOps | Tools
+  descriptionEn String?
+  descriptionBn String?
+  level         Int      @default(50) // 0-100
+  status        String   @default("ACTIVE") // ACTIVE | DRAFT
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category, status])
+  @@index([order])
+}
+
+// ============================================================
+// CONTENT — Projects
+// ============================================================
+
+model Project {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  titleEn        String
+  titleBn        String
+  summaryEn      String?
+  summaryBn      String?
+  descriptionEn  String
+  descriptionBn  String
+  thumbnailUrl   String?
+  demoUrl        String?
+  githubUrl      String?
+  technologies   String    // comma-separated tech slugs/names
+  status         String    @default("PUBLISHED") // PUBLISHED | DRAFT | ARCHIVED
+  isFeatured     Boolean   @default(false)
+  order          Int       @default(0)
+  startedAt      DateTime?
+  completedAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  images         ProjectImage[]
+
+  @@index([status, isFeatured])
+  @@index([order])
+}
+
+model ProjectImage {
+  id         String   @id @default(cuid())
+  projectId  String
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  url        String
+  altEn      String?
+  altBn      String?
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  @@index([projectId])
+}
+
+// ============================================================
+// CONTENT — Services
+// ============================================================
+
+model Service {
+  id            String   @id @default(cuid())
+  titleEn       String
+  titleBn       String
+  descriptionEn String
+  descriptionBn String
+  icon          String   // lucide icon name (SVG)
+  featuresEn    String   // newline-separated list
+  featuresBn    String
+  status        String   @default("ACTIVE")
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([status, order])
+}
+
+// ============================================================
+// CONTENT — Experience
+// ============================================================
+
+model Experience {
+  id            String    @id @default(cuid())
+  companyEn     String
+  companyBn     String
+  roleEn        String
+  roleBn        String
+  descriptionEn String
+  descriptionBn String
+  locationEn    String?
+  locationBn    String?
+  startDate     DateTime
+  endDate       DateTime?
+  current       Boolean   @default(false)
+  order         Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([order])
+}
+
+// ============================================================
+// CONTENT — Education
+// ============================================================
+
+model Education {
+  id            String    @id @default(cuid())
+  institutionEn String
+  institutionBn String
+  degreeEn      String
+  degreeBn      String
+  fieldEn       String?
+  fieldBn       String?
+  descriptionEn String?
+  descriptionBn String?
+  startDate     DateTime
+  endDate       DateTime?
+  current       Boolean   @default(false)
+  order         Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([order])
+}
+
+// ============================================================
+// CONTENT — Certifications
+// ============================================================
+
+model Certification {
+  id            String    @id @default(cuid())
+  titleEn       String
+  titleBn       String
+  organization  String
+  credentialId  String?
+  credentialUrl String?
+  issueDate     DateTime
+  expiryDate    DateTime?
+  certificateImageUrl String?
+  descriptionEn String?
+  descriptionBn String?
+  skills        String    // comma-separated tech slugs/names
+  isFeatured    Boolean   @default(false)
+  status        String    @default("ACTIVE") // ACTIVE | DRAFT
+  order         Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([status, isFeatured])
+  @@index([order])
+  @@index([issueDate])
+}
+
+// ============================================================
+// CONTENT — Testimonials
+// ============================================================
+
+model Testimonial {
+  id            String   @id @default(cuid())
+  authorName    String
+  authorRoleEn  String?
+  authorRoleBn  String?
+  companyEn     String?
+  companyBn     String?
+  avatarUrl     String?
+  contentEn    String
+  contentBn     String
+  rating        Int      @default(5) // 1-5
+  status        String   @default("ACTIVE")
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([status, order])
+}
+
+// ============================================================
+// CONTENT — Resume
+// ============================================================
+
+model Resume {
+  id             String   @id @default(cuid())
+  fileUrl        String
+  version        String   // v1, v2, etc.
+  summaryEn      String?
+  summaryBn      String?
+  isActive       Boolean  @default(true)
+  downloadedCount Int     @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([isActive])
+}
+
+// ============================================================
+// CONTENT — Media Library
+// ============================================================
+
+model Media {
+  id         String   @id @default(cuid())
+  url        String
+  filename   String
+  mimeType   String
+  size       Int      // bytes
+  altEn      String?
+  altBn      String?
+  folder     String   @default("root")
+  createdAt  DateTime @default(now())
+
+  @@index([folder])
+  @@index([mimeType])
+}
+
+// ============================================================
+// CONTENT — Contact Messages (saved from public Contact form)
+// ============================================================
+
+model ContactMessage {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  subject    String?
+  message    String
+  isRead     Boolean  @default(false)
+  isReplied  Boolean  @default(false)
+  ip         String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+
+  @@index([isRead, createdAt])
+  @@index([email])
+}
+
+// ============================================================
+// INTEGRATIONS — Social Links
+// ============================================================
+
+model SocialLink {
+  id        String   @id @default(cuid())
+  platform  String   @unique // website|facebook|instagram|whatsapp|linkedin|x|github|discord
+  label     String?
+  url       String
+  iconUrl   String?
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive, order])
+}
+
+// ============================================================
+// SETTINGS — SEO (global, single row)
+// ============================================================
+
+model SeoSetting {
+  id                  String   @id @default("global")
+  siteName            String?
+  metaTitleEn         String?
+  metaTitleBn         String?
+  metaDescriptionEn   String?
+  metaDescriptionBn   String?
+  ogTitleEn           String?
+  ogTitleBn           String?
+  ogDescriptionEn     String?
+  ogDescriptionBn     String?
+  ogImageUrl          String?
+  twitterCard         String   @default("summary_large_image")
+  twitterSite         String?
+  twitterCreator      String?
+  canonicalUrl        String?
+  googleVerification  String? // google-site-verification meta content
+  bingVerification    String? // msvalidate.01 meta content
+  robotsTxt           String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+// ============================================================
+// SETTINGS — Tracking (global, single row)
+// ============================================================
+
+model TrackingSetting {
+  id                          String   @id @default("global")
+  googleAnalyticsId          String?  // G-XXXXXXX
+  googleTagManagerId         String?  // GTM-XXXXXXX
+  metaPixelId                String?
+  googleAdsId                String?
+  metaConversionsApiToken    String?
+  googleMeasurementProtocolSecret String?
+  isEnabled                  Boolean  @default(false)
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
+}
+
+// ============================================================
+// SETTINGS — SMTP (global, single row)
+// ============================================================
+
+model SmtpSetting {
+  id          String   @id @default("global")
+  host        String?
+  port        Int?
+  encryption  String?  // SSL | TLS | NONE
+  username    String?
+  password    String?
+  fromName    String?
+  fromEmail   String?
+  isEnabled   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ============================================================
+// SETTINGS — Branding (global, single row)
+// ============================================================
+
+model BrandingSetting {
+  id                 String   @id @default("global")
+  logoUrl            String?
+  lightLogoUrl       String?
+  darkLogoUrl        String?
+  logoMarkUrl        String?
+  faviconUrl         String?
+  appleTouchIconUrl  String?
+  pwaIcon192Url      String?
+  pwaIcon512Url      String?
+  siteName           String?
+  taglineEn          String?
+  taglineBn          String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+// ============================================================
+// SETTINGS — Marketing (global, single row)
+// ============================================================
+
+model MarketingSetting {
+  id                String   @id @default("global")
+  bannerTitleEn     String?
+  bannerTitleBn     String?
+  bannerTextEn      String?
+  bannerTextBn      String?
+  bannerCtaLabelEn String?
+  bannerCtaLabelBn  String?
+  bannerCtaUrl      String?
+  isBannerActive    Boolean  @default(false)
+  promoBlocksEn     String?  // JSON string
+  promoBlocksBn     String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+// ============================================================
+// SETTINGS — General site settings (global, single row)
+// ============================================================
+
+model Settings {
+  id              String   @id @default("global")
+  defaultLocale   String   @default("en") // en | bn
+  defaultTheme    String   @default("system") // light | dark | system
+  maintenanceMode Boolean  @default(false)
+
+  // Branding
+  favicon         String?  // URL to favicon
+  logo            String?  // URL to logo (shown in admin header + public navbar)
+  siteName        String?  // Site display name
+  tagline         String?  // Short tagline
+
+  // Contact info (shown in public Contact section)
+  location        String?
+  phone           String?
+  email           String?
+
+  // Localization
+  timezone        String?  @default("Asia/Dhaka")
+  timeFormat      String?  @default("12h") // 12h | 24h
+  dateFormat      String?  @default("DD/MM/YYYY") // DD/MM/YYYY | MM/DD/YYYY | YYYY-MM-DD
+
+  // Cloudflare Turnstile (security)
+  turnstileEnabled   Boolean @default(false)
+  turnstileSiteKey   String?  // public — safe to expose to client
+  turnstileSecretKey String?  // SECRET — never exposed to client
+
+  // Anti-Bot / Anti-Scraping
+  antiBotEnabled        Boolean @default(false)
+  aiCrawlerRestricted   Boolean @default(false)
+  aggressiveBotProtection Boolean @default(false)
+  rateLimitingEnabled   Boolean @default(false)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ============================================================
+// SYSTEM — Activity Log (audit trail)
+// ============================================================
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String   // e.g., LOGIN | CREATE_PROJECT | UPDATE_SKILL | DELETE_SKILL
+  entity    String?  // e.g., Project | Skill | User
+  entityId  String?
+  ip        String?
+  userAgent String?
+  metadata  String?  // JSON string
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([action])
+  @@index([createdAt])
+}
