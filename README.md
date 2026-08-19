@@ -233,37 +233,37 @@ Localized content is supported across major portfolio sections.
 
 ## Architecture
 
-    ┌───────────────────────────────────┐
+    ┌─────────────────────────────────────────┐
     │              Public Website             │
     │                                         │
     │ Hero · About · Skills · Projects        │
     │ Services · Experience · Education       │
     │ Certifications · Testimonials · Contact │
-    └──────────────────┬────────────────┘
+    └─────────────────────┬───────────────────┘
                           │
                           ▼
-    ┌───────────────────────────────────┐
+    ┌─────────────────────────────────────────┐
     │               Next.js 16                │
     │                                         │
     │ App Router · Server Components          │
     │ Internationalization · Authentication   │
     │ Server-side Logic                       │
-    └──────────────────┬────────────────┘
+    └─────────────────────┬───────────────────┘
                           │
                           ▼
-    ┌───────────────────────────────────┐
+    ┌─────────────────────────────────────────┐
     │                  Prisma                 │
     │                   ORM                   │
-    └──────────────────┬────────────────┘
+    └─────────────────────┬───────────────────┘
                           │
                           ▼
-    ┌───────────────────────────────────┐
+    ┌─────────────────────────────────────────┐
     │               PostgreSQL                │
     │                                         │
     │ Users · About · Skills · Projects       │
     │ Services · Experience · Education       │
     │ Certifications · Testimonials · Settings│
-    └───────────────────────────────────┘
+    └─────────────────────────────────────────┘
 
 ---
 
