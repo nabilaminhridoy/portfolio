@@ -43,16 +43,6 @@ The application is built with a modern full-stack architecture using **Next.js, 
 
 ---
 
-## Live Preview
-
-**Portfolio:**  
-https://nabilaminhridoy.vercel.app
-
-**GitHub Repository:**  
-https://github.com/nabilaminhridoy/portfolio
-
----
-
 ## Key Features
 
 ### Public Portfolio
